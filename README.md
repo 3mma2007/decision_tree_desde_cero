@@ -52,29 +52,6 @@ Las predicciones de ambos modelos son idénticas sobre el conjunto de prueba. Ma
 
 El único error (1 de 30 muestras) es una versicolor clasificada como virginica, las dos clases que más se parecen entre sí.
 
-## 🚀 Cómo ejecutarlo
-
-1. Clona el repositorio:
-
-   ```bash
-   git clone <URL-de-tu-repositorio>
-   cd <nombre-del-repositorio>
-   ```
-
-2. Instala las dependencias:
-
-   ```bash
-   pip install numpy scikit-learn matplotlib jupyter
-   ```
-
-3. Abre el notebook:
-
-   ```bash
-   jupyter notebook decision_tree_desde_cero_para_clasificacion.ipynb
-   ```
-
-También puedes subirlo a [Google Colab](https://colab.research.google.com/) y ejecutarlo sin instalar nada.
-
 ## 📁 Estructura
 
 ```
@@ -82,23 +59,6 @@ También puedes subirlo a [Google Colab](https://colab.research.google.com/) y e
 ├── decision_tree_desde_cero_para_clasificacion.ipynb
 └── README.md
 ```
-
-## ⚠️ Limitaciones
-
-Es un proyecto de aprendizaje, no una librería lista para producción:
-
-- Los umbrales candidatos son los valores únicos de cada feature (scikit-learn usa los puntos medios entre valores consecutivos, lo que suele generalizar mejor).
-- La búsqueda del mejor corte tiene costo O(n²) por feature; con datasets grandes sería lenta.
-- Solo soporta clasificación con features numéricas y no incluye `min_samples_split`, `predict_proba` ni poda.
-- La evaluación usa un solo conjunto de prueba de 30 muestras; un error cambia el accuracy en ~3 %.
-
-## 🔭 Posibles mejoras
-
-- Usar puntos medios como umbrales y rechazar divisiones que no mejoren el Gini del nodo padre.
-- Convertir el código a una clase `ArbolDecision` con métodos `fit` y `predict`.
-- Agregar `min_samples_split`, `predict_proba` y una función para imprimir el árbol.
-- Validar con `cross_val_score` en lugar de una sola partición.
-- Probar con otros datasets y comparar con `sklearn.tree.export_text`.
 
 ## 🛠️ Tecnologías
 
